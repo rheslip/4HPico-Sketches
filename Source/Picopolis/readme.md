@@ -107,8 +107,11 @@ Slew - sets the slew (portamento) rate  for slewed stages. 0=fast, 10=slow
 	
 Acc Max - range 1 to 24 - sets the maximum value of the accumulators for this sequencer. 
 	Use when you want to constrain the range of notes in Add Acc mode.
+
 	
 Acc Min - range -24 to 0 - sets the minimum value of the accumulators for this sequencer. 
 	Use when you want to constrain the range of notes in Add Acc mode.
+	Note that accumulators wrap "modulo". e.g. if pitch offset B + accumulator A is 2 semitones above Acc Max A,
+	the new accumulator value will be Acc Min A + 2.
 	
 	
