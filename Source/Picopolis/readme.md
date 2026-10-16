@@ -41,7 +41,7 @@ On startup you will see the main screen which has two rows of circles and a bott
 
 **Navigation**
 
-Rotate the encoder to select a sequencer stage - the underscore indicates which stage is selected. Click to select a stage and a blinking underscore will appear under the last used item on the bottom menu. Long press and rotate the encoder to move between bottom menu items. Rotate the encoder to change the item's value. 
+Rotate the encoder to select a sequencer stage - the underscore indicates which stage is selected. Click to edit the selected stage's settings. A blinking underscore will appear under the last used item on the bottom menu. Long press and rotate the encoder to move between bottom menu items. Rotate the encoder to change the item's value. 
 Click to save the value and return to stage selection.
 
 To access the secondary menu, long press the encoder from the stage selection state. Once in the secondary menu, rotate the encoder to scroll through the menu items. Click the encoder to select an item - an underline will appear under the item value. Rotate the encoder to change the item's value and click to save the value. Long press the encoder to exit the secondary menu and return to the main screen.
