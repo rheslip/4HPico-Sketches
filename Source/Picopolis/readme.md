@@ -2,7 +2,7 @@
 
 By Rich Heslip 
 
-**TWO** Metropolis style sequencers in 4HP needs some tradeoffs. Metropolis is a 34HP module covered with buttons, switches and knobs. Picopolis has one encoder with a switch and a small OLED display. Its menu divey but not that bad once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
+Metropolis is a 34HP module covered with buttons, switches and knobs. **TWO** Metropolis style sequencers in 4HP inevitably requires tradeoffs since Picopolis only has one encoder with a switch and a small OLED display. Its menu divey but not that bad once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
 
 first release Oct 2026
 
@@ -10,11 +10,11 @@ known issues:
 
 ratcheting gets a bit ragged at high clock and ratchet rates
 
-disabling stages sometimes caused wierd sequences - maybe thats a feature?
+disabling stages sometimes causes wierd sequences - maybe thats a feature?
 
 **Concept**
 
-Picopolis is based on the Intelligel Metropolis which is itself based on the RK-185 sequencer. Picopolis also implements some new features for generative sequencing. It has TWO 8 stage sequencers vs one sequencer in the Metropolis and the sequencers can modulate each other in interesting ways.
+Picopolis is based on the Intelligel Metropolis which is itself based on the RK-185 sequencer. Picopolis implements some new features for generative sequencing. It has TWO 8 stage sequencers vs one sequencer in the Metropolis and the sequencers can modulate each other in interesting ways.
 For a better understanding of the Metropolis style sequencer you should watch some Youtube videos which explain how stages, clocks, gate modes etc work. This user guide assumes a good understanding of Metropolis.
 
 
@@ -36,7 +36,7 @@ Bottom right jack - Sequencer B CV output
 
 **Main Screen**
 
-On startup you will see the main screen which has two rows of circles and a bottom row with numbers and letters. The top row of circles represent the 8 stages of sequencer A, the second row of circles represent the 8 stages of sequencer B, and the bottom row (L-R) controls pitch offset, clocks, gate mode and stage mode respectively.
+On startup you will see the main screen which has two rows of circles and a bottom row with numbers and letters. The top row of circles represent the 8 stages of sequencer A, the second row of circles represent the 8 stages of sequencer B, and the bottom row controls pitch offset, clocks, gate mode and stage mode (L-R) respectively.
 
 
 **Navigation**
