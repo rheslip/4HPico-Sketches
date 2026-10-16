@@ -2,7 +2,7 @@
 
 By Rich Heslip 
 
-Metropolis is a 34HP module covered with buttons, switches and knobs. **TWO** Metropolis style sequencers in 4HP inevitably requires tradeoffs since Picopolis only has one encoder with a switch and a small OLED display. Its menu divey but not that bad once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
+Metropolis is a 34HP module covered with buttons, switches and knobs. **TWO** Metropolis style sequencers in 4HP inevitably requires tradeoffs since the 4HPico only has one encoder with a switch and a small OLED display. Picopolis is a bit menu divey but quick to navigate once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
 
 first release Oct 2026
 
