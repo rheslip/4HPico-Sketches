@@ -2,7 +2,6 @@
 
 By Rich Heslip 
 
-Metropolis is a 34HP module covered with buttons, switches and knobs. **TWO** Metropolis style sequencers in 4HP inevitably requires tradeoffs since the 4HPico only has one encoder with a switch and a small OLED display. Picopolis is a bit menu divey but quick to navigate once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
 
 first release Oct 2026
 
@@ -17,6 +16,7 @@ disabling stages sometimes causes wierd sequences - maybe thats a feature?
 Picopolis is based on the Intelligel Metropolis which is itself based on the RK-185 sequencer. Picopolis implements some new features for generative sequencing. It has TWO 8 stage sequencers vs one sequencer in the Metropolis and the sequencers can modulate each other in interesting ways.
 For a better understanding of the Metropolis style sequencer you should watch some Youtube videos which explain how stages, clocks, gate modes etc work. This user guide assumes a good understanding of Metropolis.
 
+The Metropolis is a 34HP module covered with buttons, switches and knobs. **TWO** Metropolis style sequencers in 4HP inevitably requires tradeoffs since the 4HPico only has one encoder with a switch and a small OLED display. Picopolis is a bit menu divey but quick to navigate once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
 
 **Patching**
 
