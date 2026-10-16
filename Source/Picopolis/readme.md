@@ -5,16 +5,18 @@ By Rich Heslip
 **TWO** Metropolis style sequencers in 4HP needs some tradeoffs. Metropolis is a 34HP module covered with buttons, switches and knobs. Picopolis has one encoder with a switch and a small OLED display. Its menu divey but not that bad once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
 
 first release Oct 2026
+
 known issues:
+
 ratcheting gets a bit ragged at high clock and ratchet rates
+
 disabling stages sometimes caused wierd sequences - maybe thats a feature?
 
 **Concept**
 
-Picopolis is based on the Intelligel Metropolis which is itself based on the RK-185 sequencer. Picopolis also implements some new features for generative sequencing. It has TWO 8 stage sequencers vs one sequencer in the Metropolis. The sequencers can modulate each other in interesting ways.
+Picopolis is based on the Intelligel Metropolis which is itself based on the RK-185 sequencer. Picopolis also implements some new features for generative sequencing. It has TWO 8 stage sequencers vs one sequencer in the Metropolis and the sequencers can modulate each other in interesting ways.
 For a better understanding of the Metropolis style sequencer you should watch some Youtube videos which explain how stages, clocks, gate modes etc work. This user guide assumes a good understanding of Metropolis.
 
-On startup you will see the main screen which has two rows of circles and a bottom row with numbers and letters. The top two rows of circles represent the 8 stages of the two sequencers and the bottom row (L-R) controls pitch offset, clocks, gate mode and stage mode respectively.
 
 **Patching**
 
@@ -31,6 +33,10 @@ Bottom left jack - Sequencer A CV output
 Bottom right jack - Sequencer B CV output
 
 **The 4HPico module must be configured for CV output on the middle jacks** see the hardware docs for how to do this
+
+**Main Screen**
+
+On startup you will see the main screen which has two rows of circles and a bottom row with numbers and letters. The top row of circles represent the 8 stages of sequencer A, the second row of circles represent the 8 stages of sequencer B, and the bottom row (L-R) controls pitch offset, clocks, gate mode and stage mode respectively.
 
 
 **Navigation**
@@ -67,17 +73,18 @@ Right - Stage enable, disable, slide. "O" means the stage is enabled, "X" means 
 
 **Secondary Menu**
 
-The secondary menus are repeated for sequencer A and B.
+The secondary menus are the same for sequencer A and B.
 
-Length - sets the number of stages on the sequence
+Length - sets the number of stages in the sequencer
 
-ClkDiv - clock divider
+ClkDiv - clock divider for this sequencer
 
 Gate % - gate length as a % of the clock period
 
 Mode - Sequencer advance modes - Forward, Reverse, PingPong, Brownian and Random
 
-ClkLim - sets the maximum number of clocks in the sequence regardless of stage length and stage clock settings. e.g. If you want the sequence to run in sync with something else it will restart the sequence after this many clocks.
+ClkLim - sets the maximum number of clocks in the sequence regardless of stage length and stage clock settings. 
+		e.g. If you want the sequencer to run in sync with something else it will restart the sequence after this many clocks.
 
 Root - sets the root note to which the stage's pitch offset is added.
 
@@ -87,16 +94,21 @@ CVMode
 
 	Pitch - CV out = quantize (Root + stage pitch offset)
 	
-	Add  - CV out = quantize (Root + stage pitch offset + stage pitch offset of other sequencer). example set sequencer B clock divide to 16 and its pitch offsets will transpose sequencer A every 16 clocks.
+	Add  - CV out = quantize (Root + stage pitch offset + stage pitch offset of other sequencer). 
+		 for example set sequencer B clock divide to 16 and its pitch offsets will transpose sequencer A every 16 clocks.
 	
 	Subtract -  CV out = quantize (Root + stage pitch offset - stage pitch offset of other sequencer).
 	
-	Add Acc - CV out = quantize (Root + stage pitch offset + accumulator). Both sequencers have an accumulator for each stage. The pitch offset of the other sequencer is added to the accumulator on each step of the other sequencer.
+	Add Acc - CV out = quantize (Root + stage pitch offset + accumulator). 
+		Both sequencers have an accumulator for each stage. 
+		The pitch offset of the other sequencer is added to the accumulator on each step of the other sequencer.
 	
 	Slew - sets the slew (portamento) rate  for slewed stages. 0=fast, 10=slow
 	
-	Acc Max - range 1 to 24 - sets the maximum value of the accumulators for this sequencer. Use when you want to constrain the range of notes in Add Acc mode.
+	Acc Max - range 1 to 24 - sets the maximum value of the accumulators for this sequencer. 
+		Use when you want to constrain the range of notes in Add Acc mode.
 	
-	Acc Min - range -24 to 0 - sets the minimum value of the accumulators for this sequencer. Use when you want to constrain the range of notes in Add Acc mode.
+	Acc Min - range -24 to 0 - sets the minimum value of the accumulators for this sequencer. 
+		Use when you want to constrain the range of notes in Add Acc mode.
 	
 	
