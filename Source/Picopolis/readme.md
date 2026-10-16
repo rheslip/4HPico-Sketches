@@ -103,12 +103,12 @@ CVMode
 		Both sequencers have an accumulator for each stage. 
 		The pitch offset of the other sequencer is added to the accumulator on each step of the other sequencer.
 	
-	Slew - sets the slew (portamento) rate  for slewed stages. 0=fast, 10=slow
+Slew - sets the slew (portamento) rate  for slewed stages. 0=fast, 10=slow
 	
-	Acc Max - range 1 to 24 - sets the maximum value of the accumulators for this sequencer. 
-		Use when you want to constrain the range of notes in Add Acc mode.
+Acc Max - range 1 to 24 - sets the maximum value of the accumulators for this sequencer. 
+	Use when you want to constrain the range of notes in Add Acc mode.
 	
-	Acc Min - range -24 to 0 - sets the minimum value of the accumulators for this sequencer. 
-		Use when you want to constrain the range of notes in Add Acc mode.
+Acc Min - range -24 to 0 - sets the minimum value of the accumulators for this sequencer. 
+	Use when you want to constrain the range of notes in Add Acc mode.
 	
 	
