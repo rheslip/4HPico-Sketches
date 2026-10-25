@@ -25,7 +25,7 @@
 //
 // -----------------------------------------------------------------------------
 /*
- * June 2026 -  Picopolis - Dual Metropolis style sequencer for the 4HPico 
+ * June 2026 -  Duopolis - Dual Metropolis style sequencer for the 4HPico 
  */
 
 #include <Arduino.h>
@@ -36,6 +36,7 @@
 #include <Adafruit_SSD1306.h>
 #include "Monospaced_12.h"
 #include "Clickencoder.h"
+
 
 
 #define SAMPLERATE 44100  // high sample rate gives best resolution/lowest latency on CV and gate outputs
@@ -62,6 +63,8 @@ enum GATEMODES {ONEPULSE,ALLPULSES,GATEMODEHIGH,GATEMODELOW,RATCHETS2,RATCHETS3,
 enum STAGEMODES {FORWARD,REVERSE,PINGPONG,BROWNIAN,NUMSTAGEMODES};
 enum CVMODES {PITCH,PITCHADD,PITCHSUBTRACT,PITCHBAcc,NUMCVMODES};
 enum ENABLEMODES {DISABLED,ENABLED,SLIDE,NUMENABLEMODES};
+enum CLOCKXMOD {CLOCKXMOD_DISABLED,CLOCKXMOD_ENABLED};
+int16_t clkxmod[2]={CLOCKXMOD_DISABLED,CLOCKXMOD_DISABLED}; // clock cross mod enable flag
 #define FWD 1    // stage step direction increment
 #define REV -1
 const char * menugatemodes[] = {"1P","NP","Hi","Lo","R2","R3","R4"};
@@ -577,6 +580,7 @@ void loop1() {
           }
           if (++seq[i].pulsecounter > pulses[i][seq[i].index]) {  // if we hit the last pulse on this stage go to next stage
             seq[i].pulsecounter=1; // reset pulse counter for next stage
+            if (clkxmod[i]==CLOCKXMOD_ENABLED) pulses[i][seq[i].index]=pulses[i^1][seq[i^1].index]; // cross mod - set the pulses for this stage from the other sequencer
             // process number of stages 
             if (--seq[i].stagecounter <=0 ) { // if we are on the last stage
               seq[i].stagecounter=seq[i].stages;

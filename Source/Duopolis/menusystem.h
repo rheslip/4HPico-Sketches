@@ -103,6 +103,8 @@ void dummy(int16_t p1,int16_t p2) {
 
 // text arrays used for submenu TYPE_TEXT fields
 const char * textoffon[] = {"Off", "On"};
+const char * textpulsesA[] = {"A", "B"};
+const char * textpulsesB[] = {"B", "A"};
 const char * textstepmode[] = {"Forward", "Reverse","PingPong","Brownian","Random"};
 const char * CVmodenames[] = {"Pitch","Add","Subtract","Add Acc"};
 //uint16_t scales[] ={MAJOR_PENTATONIC,MAJOR,MINOR_PENTATONIC,MINOR,CHROMATIC,HARMONIC_MINOR,DORIAN,PHRYGIAN,LYDIAN,MIXOLYDIAN};
@@ -114,6 +116,7 @@ struct menu menus[] = {
   "ClkDiv A",1,16,1,TYPE_INTEGER,0,&seq[0].clockdivider,0,0,
   "Gate % A",10,90,10,TYPE_INTEGER,0,&seq[0].gatelength,0,0,
   "Mode A",0,4,1,TYPE_TEXT,textstepmode,&seq[0].stagemode,0,0,
+  "Pulses A",0,4,1,TYPE_TEXT,textpulsesA,&clkxmod[0],0,0,
   "ClkLim A",0,64,1,TYPE_INTEGER,0,&seq[0].maxpulses,0,0,
   "Root A",0,60,1,TYPE_INTEGER,0,&seq[0].root,0,0,
   "Scale A",0,9,1,TYPE_TEXT,scalenames,&seq[0].scale,0,0,
@@ -125,6 +128,7 @@ struct menu menus[] = {
   "ClkDiv B",1,16,1,TYPE_INTEGER,0,&seq[1].clockdivider,0,0,
   "Gate % B",10,90,10,TYPE_INTEGER,0,&seq[1].gatelength,0,0,
   "Mode B",0,4,1,TYPE_TEXT,textstepmode,&seq[1].stagemode,0,0,
+  "Pulses B",0,4,1,TYPE_TEXT,textpulsesB,&clkxmod[1],0,0,
   "ClkLim B",0,64,1,TYPE_INTEGER,0,&seq[1].maxpulses,0,0,
   "Root B",0,60,1,TYPE_INTEGER,0,&seq[1].root,0,0,
   "Scale B",0,9,1,TYPE_TEXT,scalenames,&seq[1].scale,0,0,
