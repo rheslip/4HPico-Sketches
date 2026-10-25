@@ -50,7 +50,7 @@ To access the secondary menu, long press the encoder from the stage selection st
 
 Left - Stage pitch offset value, range +-24 semitones. CV output is the pitch offset added to the root note set in the secondary menu.
 
-2nd from Left - stage clocks, range 1-8. Stage will move to the next stage after this many clocks. 8 stages * 8 clocks = maximum of 64 clocks per sequence
+2nd from Left - stage pulses, range 1-8. Stage will move to the next stage after this many clock pulses. 8 stages * 8 clocks = maximum of 64 clocks per sequence
 
 2nd from Right - Gate mode
 
@@ -83,6 +83,8 @@ Gate % - gate length as a % of the clock period
 
 Mode - Sequencer advance modes - Forward, Reverse, PingPong, Brownian and Random
 
+Pulses - A or B - use pulse count setting from this sequencer or the other sequencer. Using the other sequencer can create interesting rhythmic effects if the sequencers use different clock dividers, modes etc. 
+
 ClkLim - sets the maximum number of clocks in the sequence regardless of stage length and stage clock settings. 
 		e.g. If you want the sequencer to run in sync with something else it will restart the sequence after this many clocks.
 
@@ -103,7 +105,7 @@ CVMode
 		Both sequencers have an accumulator for each stage. 
 		The pitch offset of the other sequencer is added to the accumulator on each step of the other sequencer.
 	
-Slew - sets the slew (portamento) rate  for slewed stages. 0=fast, 10=slow
+Slew - sets the slew (portamento) rate for slewed stages. 0=fast, 10=slow
 	
 Acc Max - range 1 to 24 - sets the maximum value of the accumulators for this sequencer. 
 	Use to constrain the range of notes in Add Acc mode.
