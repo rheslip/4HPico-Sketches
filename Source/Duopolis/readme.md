@@ -14,7 +14,7 @@ disabling stages sometimes causes wierd sequences - maybe thats a feature?
 **Concept**
 
 Duopolis is based on the Intelligel Metropolis which is itself based on the RK-185 sequencer. Duopolis implements some new features for generative sequencing. It has TWO 8 stage sequencers vs one sequencer in the Metropolis and the sequencers can modulate each other in interesting ways.
-For a better understanding of the Metropolis style sequencer you should watch some Youtube videos which explain how stages, clocks, gate modes etc work. This user guide assumes a good understanding of Metropolis.
+For a better understanding of the Metropolis style sequencer you should watch some Youtube videos which explain how stages, pulses, gate modes etc work. This user guide assumes a good understanding of Metropolis.
 
 The Metropolis is a 34HP module covered with buttons, switches and knobs. **TWO** Metropolis style sequencers in 4HP inevitably requires tradeoffs since the 4HPico only has one encoder with a switch and a small OLED display. Duopolis is a bit menu divey but quick to navigate once you understand the UI. It doesn't have every feature of the Metropolis and no doubt behaves differently in some cases.
 
@@ -36,7 +36,7 @@ Bottom right jack - Sequencer B CV output
 
 **Main Screen**
 
-On startup you will see the main screen which has two rows of circles and a bottom row with numbers and letters. The top row of circles represent the 8 stages of sequencer A, the second row of circles represent the 8 stages of sequencer B, and the bottom row controls pitch offset, clocks, gate mode and stage mode (L-R) respectively.
+On startup you will see the main screen which has two rows of circles and a bottom row with numbers and letters. The top row of circles represent the 8 stages of sequencer A, the second row of circles represent the 8 stages of sequencer B, and the bottom row controls pitch offset, pulses per stage, gate mode and stage mode (L-R) respectively.
 
 
 **Navigation**
@@ -50,23 +50,23 @@ To access the secondary menu, long press the encoder from the stage selection st
 
 Left - Stage pitch offset value, range +-24 semitones. CV output is the pitch offset added to the root note set in the secondary menu.
 
-2nd from Left - stage pulses, range 1-8. Stage will move to the next stage after this many clock pulses. 8 stages * 8 clocks = maximum of 64 clocks per sequence
+2nd from Left - stage pulse count, range 1-8. Stage will move to the next stage after this many clock pulses. 8 stages * 8 clocks = maximum of 64 clocks per sequence
 
 2nd from Right - Gate mode
 
-	1P - one gate will be output on the first clock regardless of what the stage clocks setting is
+	1P - one gate will be output on the first clock pulse regardless of what the stage clocks setting is
 	
-	NP - one gate will be output for every clock of this stage
+	NP - one gate will be output for every clock pulse of this stage
 	
 	Hi - gate will be high for this stage ie a tie to the previous stage
 	
 	Lo - gate will be low for this stage ie this stage is a rest
 	
-	R2 - Two gates will be output for every clock of this stage ie ratchet x2
+	R2 - Two gates will be output for every clock pulse of this stage ie ratchet x2
 	
-	R3 - Three gates will be output for every clock of this stage ie ratchet x3
+	R3 - Three gates will be output for every clock pulse of this stage ie ratchet x3
 	
-	R4 - Four gates will be output for every clock of this stage ie ratchet x4
+	R4 - Four gates will be output for every clock pulse of this stage ie ratchet x4
 	
 Right - Stage enable, disable, slide. "O" means the stage is enabled, "X" means it is disabled, and "/" means this stage will slide to pitch
 
@@ -85,8 +85,8 @@ Mode - Sequencer advance modes - Forward, Reverse, PingPong, Brownian and Random
 
 Pulses - A or B - use pulse count setting from this sequencer or the other sequencer. Using the other sequencer can create interesting rhythmic effects if the sequencers use different clock dividers, modes etc. 
 
-ClkLim - sets the maximum number of clocks in the sequence regardless of stage length and stage clock settings. 
-		e.g. If you want the sequencer to run in sync with something else it will restart the sequence after this many clocks.
+ClkLim - sets the maximum number of clocks pulses in the sequence regardless of stage length and stage pulse settings. 
+		Use case - you want the sequencer to run in sync with something else so it will restart the sequence after this many clock pulses.
 
 Root - sets the root note to which the stage's pitch offset is added.
 
@@ -103,7 +103,7 @@ CVMode
 	
 	Add Acc - CV out = quantize (Root + stage pitch offset + accumulator). 
 		Both sequencers have an accumulator for each stage. 
-		The pitch offset of the other sequencer is added to the accumulator on each step of the other sequencer.
+		In this mode the pitch offset of the other sequencer is added to this sequencer's accumulator on each step of the other sequencer.
 	
 Slew - sets the slew (portamento) rate for slewed stages. 0=fast, 10=slow
 	
